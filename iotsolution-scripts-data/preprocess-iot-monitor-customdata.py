@@ -119,7 +119,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 
       # Roll back each data stream by 10 percent - change this to a larger number if you want more data
       # For supervised machine learning you need a minimum of 30 data points in each stream
-     maxrows=1000
+     maxrows=500
       # Go to the last offset of each stream: If lastoffset=500, then this function will rollback the 
       # streams to offset=500-50=450
      offset=-1
@@ -151,7 +151,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
       #   arcturus-Light_Intensity_preprocessed_Avg      
     
      # Add a 7000 millisecond maximum delay for VIPER to wait for Kafka to return confirmation message is received and written to topic 
-     delay=70
+     delay=100
      # USE TLS encryption when sending to Kafka Cloud (GCP/AWS/Azure)
      enabletls=1
      array=0
@@ -200,7 +200,7 @@ latlong=lat:long'
  
      identifier = "IoT device performance and failures"
 
-     preprocesslogic='anomprob,trend,avg,min,max'
+     preprocesslogic='anomprob,trend,avg,min,max,sum'
 
      
 #     pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
