@@ -119,7 +119,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 
       # Roll back each data stream by 10 percent - change this to a larger number if you want more data
       # For supervised machine learning you need a minimum of 30 data points in each stream
-     maxrows=2000
+     maxrows=1000
       # Go to the last offset of each stream: If lastoffset=500, then this function will rollback the 
       # streams to offset=500-50=450
      offset=-1
@@ -200,7 +200,7 @@ latlong=lat:long'
  
      identifier = "IoT device performance and failures"
 
-     preprocesslogic='anomprob,trend,avg'
+     preprocesslogic='anomprob,trend,avg,min,max'
 
      
 #     pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
